@@ -1,9 +1,18 @@
+const newTask = document.querySelector('input');
+
+function addTask() {
+  let task = document.createElement('li');
+  task.innerHTML = newTask.value;
+  taskList.append(task);
+}
+
+
 btnAdd.onclick = function() {
-  console.log('click and add');
+  addTask();
 };
 
-document.querySelector('input').addEventListener('keyup', function(e) {
+newTask.addEventListener('keyup', function(e) {
   if(e.key === 'Enter') {
-    console.log('press enter');
+    addTask();
   }
 });
